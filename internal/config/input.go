@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func GetUrl() (*string, error) {
+func GetURL() (*string, error) {
 	// Cria uma variável para receber a URL
 	var url string
 

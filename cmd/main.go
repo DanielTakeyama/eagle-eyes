@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-	url, err := config.GetUrl()
+	url, err := config.GetURL()
 	if err != nil {
 		panic(err)
 	}
