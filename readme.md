@@ -52,19 +52,54 @@ Contribuições são muito bem-vindas e você pode ajudar com:
 - Novas features e modos de relatório.
 - Sugestões de melhorias na documentação.
 
-# 1. Faça um fork do repositório
+## 1. Faça um fork do repositório
 git clone https://github.com/DanielTakeyama/eagle-eyes.git
 
-# 2. Crie uma branch para sua feature
+## 2. Crie uma branch para sua feature
 git checkout -b feature/minha-feature
 
-# 3. Commit suas mudanças
+## 3. Commit suas mudanças
 git commit -m "Adiciona nova feature"
 
-# 4. Envie o PR para revisão
+## 4. Envie o PR para revisão
 git push origin feature/minha-feature
 
 ---
+
+## 📝 Padrão de Commits
+
+Para manter o repositório organizado e facilitar contribuições, seguimos o padrão **Conventional Commits**.
+### 🔹 Tipos de commit mais comuns
+
+| Tipo         | Quando usar |
+|-------------|------------|
+| `feat`      | Adição de uma nova **feature** ou funcionalidade |
+| `fix`       | Correção de **bug** |
+| `docs`      | Alterações em **documentação** (README, ARCHITECTURE.md, etc) |
+| `style`     | Formatação, espaçamento, sem alterar lógica do código |
+| `refactor`  | Refatoração de código sem alterar funcionalidade |
+| `test`      | Adição ou correção de **testes** |
+| `chore`     | Tarefas de manutenção, scripts, CI/CD, dependências |
+
+---
+
+### 🔹 Exemplos práticos
+
+```bash
+feat(scan): adiciona suporte a wordlists customizadas
+
+fix(utils): corrige erro de parsing de URLs com barras duplas
+
+docs(readme): atualiza instruções de contribuição e licença
+
+style(scan): ajusta indentação e espaçamento do scanner
+
+refactor(scan): separa funções de worker e resultado em arquivos distintos
+
+test(scan): adiciona testes unitários para função de request
+```
+
+--- 
 
 ## ⚠️ Aviso Legal e Ético
 
