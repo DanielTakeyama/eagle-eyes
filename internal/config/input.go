@@ -1,29 +1,8 @@
+// Função GetURL
+// 1º - Solicita a URL do Alvo
+// 2º - Analisa se a URL esta vazia e caso esteja, retorna um erro
+// 3º - Analisa se a URL começa com HTTP:// ou HTTPS:// e caso não comece, retorna um erro
+// 4º - Analisa se o ultimo digito da URL é "/", caso não seja, adicione
+// 5º - Retorna a URL validada
+
 package config
-
-import (
-	"fmt"
-)
-
-func GetURL() (*string, error) {
-	// Cria uma variável para receber a URL
-	var url string
-
-	// Le o STDIN (Entrada Padrão do terminal) e armazena o valor na memória da variável URL
-	for url == ""{
-		
-		// Exibe uma mensagem solicitando a URL do Alvo
-		fmt.Println("Digite a URL do alvo, ex: https://www.suaurl.com.br")
-		fmt.Print("URL do ALVO: ")
-		
-		// Pega os dados digitado pelo usuario
-		_, err := fmt.Scanln(&url)
-		
-		// Verifica se houve algum erro, caso tenha retorna o erro
-		if err != nil {
-			return nil, fmt.Errorf("falha ao ler a URL do usuario")
-		}
-	}
-
-	// Retorna o valor para quem chamou a função
-	return &url, nil
-}
