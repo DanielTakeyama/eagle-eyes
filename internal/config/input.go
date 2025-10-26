@@ -1,6 +1,6 @@
 // Função GetURL
 // 1º - Solicita a URL do Alvo -> OK
-// 2º - Analisa se a URL esta vazia e caso esteja, retorna um erro
+// 2º - Analisa se a URL esta vazia e caso esteja, retorna um erro -> OK
 // 3º - Analisa se a URL começa com HTTP:// ou HTTPS:// e caso não comece, retorna um erro
 // 4º - Analisa se o ultimo digito da URL é "/", caso não seja, adicione
 // 5º - Retorna a URL validada
@@ -27,7 +27,7 @@ func GetURL() (*string, error) {
 		}
 
 		// Enquanto o usuário não digitar nada ele fica preso no loop
-		if URL == ""{
+		if URL == "" /*|| validateURL == False*/{
 			fmt.Println("Erro: a URL não pode estar vazia, tente novamente!")
 		} else {
 			loop = true
