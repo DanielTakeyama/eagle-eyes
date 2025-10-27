@@ -27,6 +27,8 @@ func GetURL() (*string, error) {
 		}
 
 		// Enquanto o usuário não digitar nada ele fica preso no loop
+
+		//FALTA CRIAR E ADICIONAR A FUNÇÃO DE VALIDAR URL (HTTP, HTTPS E /)
 		if URL == "" /*|| validateURL == False*/{
 			fmt.Println("Erro: a URL não pode estar vazia, tente novamente!")
 		} else {
