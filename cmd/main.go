@@ -1,7 +1,16 @@
 package main
 
-import "fmt"
+import (
+	"eagle-eyes/internal/config"
+	"fmt"
+)
 
 func main() {
-	fmt.Println("Iniciando o Eagle Eyes... Por favor, Aguarde!")
+
+	url, err := config.GetURL()
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("URL: ", *url)
+
 }
