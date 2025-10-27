@@ -7,9 +7,12 @@
 
 package config
 
-import "fmt"
+import (
+	"eagle-eyes/internal/utils"
+	"fmt"
+)
 
-func GetURL() (*string, error) {
+func GetURL() (string, error) {
 	// Declaração das variáveis + Zero value (Atribuido pelo GO)
 	var URL string
 	var loop bool
@@ -17,24 +20,26 @@ func GetURL() (*string, error) {
 	// Exibe uma mensagem para o usuario solicitando a URL do ALVO e mostra um exemplo de como o dado deve ser fornecido
 	fmt.Println("Insira a URL do alvo, ex: https://www.meualvo.com.br")
 
-	// Solicita a entrada dos dados pelo usuario
+	// Solicita a URL do alvo
 	for !loop {
 		fmt.Print("URL do Alvo: ")
 		_, err := fmt.Scanln(&URL)
-		// Se der algum erro na hora de receber os dados, retorna nil para a string e o erro para tratarmos ele
+		// Se der algum erro na hora de receber os dados, retorna uma string vazia e o erro para tratarmos ele no escopo da onde a função foi chamada
 		if err != nil{
-			return nil, err
+			return "", err
 		}
 
-		// Enquanto o usuário não digitar nada ele fica preso no loop
-
-		//FALTA CRIAR E ADICIONAR A FUNÇÃO DE VALIDAR URL (HTTP, HTTPS E /)
-		if URL == "" /*|| validateURL == False*/{
-			fmt.Println("Erro: a URL não pode estar vazia, tente novamente!")
+		// Enquanto o usuário digitar uma URL em branco (Vazia) ele fica preso no loop
+		if URL == ""{
+			fmt.Println("[erro]: URL Incorreta: A URL não pode estar vazia, tente novamente!")
 		} else {
+			// Se a URL não estiver vazia, faz uma validação para ver se ela esta no formato correto, caso esteja, sai do loop e retorna a URL validada, caso não esteja, retorna o erro
+			URL, err = utils.ValidateURL(URL)
+			if err != nil{
+				return "", err
+			}
 			loop = true
-		} 
+		}
 	}
-
-	return &URL, nil
+	return URL, nil
 }
