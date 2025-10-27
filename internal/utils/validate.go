@@ -25,6 +25,7 @@ func ValidateURL(url string) (string, error) {
 		// Caso a URL já tenha '/' no final, apenas retorna a URL já validada
 		return url, nil
 	} 
-	
+
+	// Caso a URL não tenha 'http://' ou 'https://' retorna uma string vazia e um erro
 	return "", fmt.Errorf("[erro] URL Inválida: A URL precisa começar com 'http://' ou 'https://'")
 }

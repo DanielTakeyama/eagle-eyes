@@ -1,7 +1,7 @@
 package main
 
 import (
-	"eagle-eyes/internal/utils"
+	"eagle-eyes/internal/config"
 	"fmt"
 )
 
