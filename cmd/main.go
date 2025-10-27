@@ -1,6 +1,9 @@
 package main
 
-import "eagle-eyes/internal/utils"
+import (
+	"eagle-eyes/internal/utils"
+	"fmt"
+)
 
 func main() {
 
@@ -9,25 +12,28 @@ func main() {
 	//	panic(err)
 	//}
 	//fmt.Println("URL: ", *url)
-	http := "https://www.codeflakes.com.br"
-	https := "https://www.codeflakes.com.br"
+	http := "http://www.codeflakes.com.br"
+	https := "https://www.codeflakes.com.br/"
 	url := "www.codeflakes.com.br"
 
-	_, err := utils.ValidateURL(http)
+	urlUm, err := utils.ValidateURL(http)
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println(urlUm)
 	//////////////////////////////////////
 
-	_, err = utils.ValidateURL(https)
+	urlDois, err := utils.ValidateURL(https)
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println(urlDois)
 	//////////////////////////////////////
 
-	_, err = utils.ValidateURL(url)
+	urlTres, err := utils.ValidateURL(url)
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println(urlTres)
 	//////////////////////////////////////
 }
