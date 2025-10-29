@@ -1,8 +1,4 @@
 package utils
-// Trocar a validação de prefixo e sufixo que estão em SLICES para strings.HasPrefix e strings.HasSufix -> OK!
-// Trabalhar com ponteiro para ficar evitando copias de variaveis e também para evitar confusão -> OK!
-// Retornar o ponteiro e não a copia da URL -> OK!
-// Melhorar mensagem de erro, ex: 'url inválida: precisa começar com http:// ou https://' -> OK!
 
 import (
 	"fmt"
