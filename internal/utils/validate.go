@@ -28,5 +28,5 @@ func ValidateURL(url *string) (*string, error) {
 	} 
 
 	// Caso a URL não tenha 'http://' ou 'https://' retorna uma string vazia e um erro
-	return nil, fmt.Errorf("[URL Inválida]: A URL precisa começar com 'http://' ou 'https://'")
+	return nil, fmt.Errorf("url inválida: precisa começar com http:// ou https://")
 }
