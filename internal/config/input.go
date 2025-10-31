@@ -8,7 +8,6 @@
 package config
 
 import (
-	"eagle-eyes/internal/utils"
 	"fmt"
 )
 
@@ -25,20 +24,20 @@ func GetURL() (string, error) {
 		fmt.Print("URL do Alvo: ")
 		_, err := fmt.Scanln(&URL)
 		// Se der algum erro na hora de receber os dados, retorna uma string vazia e o erro para tratarmos ele no escopo da onde a função foi chamada
-		if err != nil{
+		if err != nil {
 			return "", err
 		}
 
 		// Enquanto o usuário digitar uma URL em branco (Vazia) ele fica preso no loop
-		if URL == ""{
+		if URL == "" {
 			fmt.Println("[erro]: URL Incorreta: A URL não pode estar vazia, tente novamente!")
 		} else {
 			// Se a URL não estiver vazia, faz uma validação para ver se ela esta no formato correto, caso esteja, sai do loop e retorna a URL validada, caso não esteja, retorna o erro
-			URL, err = utils.ValidateURL(URL)
-			if err != nil{
-				return "", err
-			}
-			loop = true
+			//URL, err = utils.ValidateURL(URL)
+			//if err != nil{
+			//	return "", err
+			//}
+			//loop = true
 		}
 	}
 	return URL, nil
